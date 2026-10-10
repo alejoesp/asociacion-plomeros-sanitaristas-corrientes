@@ -1,0 +1,28 @@
+<svg width="1200" height="360" viewBox="0 0 1200 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="360" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#07151F"/>
+    <stop offset=".55" stop-color="#0D2A39"/>
+    <stop offset="1" stop-color="#14534F"/>
+  </linearGradient>
+  <linearGradient id="a" x1="920" y1="70" x2="1090" y2="285" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#68DFFF"/>
+    <stop offset="1" stop-color="#73EDC9"/>
+  </linearGradient>
+</defs>
+<rect width="1200" height="360" rx="28" fill="url(#bg)"/>
+<g opacity=".085" stroke="#B7F4FF">
+  <path d="M0 60H1200M0 120H1200M0 180H1200M0 240H1200M0 300H1200"/>
+  <path d="M120 0V360M240 0V360M360 0V360M480 0V360M600 0V360M720 0V360M840 0V360M960 0V360M1080 0V360"/>
+</g>
+<text x="80" y="112" fill="#76E7D0" font-size="17" font-family="Arial, Helvetica, sans-serif" font-weight="700">SITIO WEB INSTITUCIONAL</text>
+<text x="80" y="164" fill="white" font-size="46" font-family="Arial, Helvetica, sans-serif" font-weight="800">Plomeros y Sanitaristas</text>
+<text x="82" y="205" fill="#D0E0E6" font-size="24" font-family="Arial, Helvetica, sans-serif">Asociación Civil de Corrientes</text>
+<text x="82" y="250" fill="#8FBBC4" font-size="17" font-family="Arial, Helvetica, sans-serif">HTML · CSS · JavaScript · GitHub Pages</text>
+<g transform="translate(926 73)">
+  <circle cx="95" cy="103" r="82" stroke="url(#a)" stroke-width="3"/>
+  <path d="M58 92L95 63L132 92V137H58V92Z" stroke="url(#a)" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M82 137V108H108V137" stroke="url(#a)" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M48 151H143" stroke="url(#a)" stroke-width="5" stroke-linecap="round"/>
+</g>
+</svg>
