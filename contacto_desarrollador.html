@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto - Desarrollador</title>
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --color-primario: #0d3c61;
+      --color-secundario: #1486cc;
+      --color-acento: #1abc9c;
+      --color-claro: #eef4fa;
+      --color-texto: #333333;
+      --color-texto-suave: #6b6b6b;
+      --color-topbar: #072339;
+      --blanco: #ffffff;
+      --radio: 8px;
+      --sombra: 0 18px 44px rgba(13, 60, 97, 0.13);
+      --sombra-fuerte: 0 26px 70px rgba(7, 35, 57, 0.22);
+      --ancho-maximo: 1120px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(26, 188, 156, 0.16), transparent 30%),
+        radial-gradient(circle at 86% 12%, rgba(20, 134, 204, 0.18), transparent 34%),
+        linear-gradient(180deg, #f8fbfd 0%, var(--color-claro) 100%);
+      color: var(--color-texto);
+      line-height: 1.6;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      left: -8%;
+      right: -8%;
+      bottom: -74px;
+      height: 150px;
+      opacity: 0.34;
+      pointer-events: none;
+      background:
+        radial-gradient(70px 42px at 70px 42px, transparent 62%, rgba(20, 134, 204, 0.11) 64% 70%, transparent 72%);
+      background-size: 140px 90px;
+      animation: waveMove 18s linear infinite;
+    }
+
+    .topbar {
+      background: var(--color-topbar);
+      color: var(--blanco);
+      font-size: 0.84rem;
+    }
+
+    .topbar-inner {
+      max-width: var(--ancho-maximo);
+      margin: 0 auto;
+      padding: 0.38rem 1.4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-acento);
+      box-shadow: 0 0 0 5px rgba(26, 188, 156, 0.15);
+      display: inline-block;
+    }
+
+    .topbar-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      opacity: 0.92;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.88);
+      border-bottom: 1px solid rgba(13, 60, 97, 0.12);
+      backdrop-filter: blur(16px);
+    }
+
+    .header-inner {
+      max-width: var(--ancho-maximo);
+      margin: 0 auto;
+      padding: 0.8rem 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      color: var(--color-primario);
+    }
+
+    .brand strong {
+      display: block;
+      font-size: clamp(1rem, 1.8vw, 1.28rem);
+      line-height: 1.15;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--color-secundario);
+      font-weight: 800;
+      margin-top: 0.15rem;
+      text-transform: uppercase;
+      font-size: 0.76rem;
+    }
+
+    .back-button {
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      border-radius: 999px;
+      padding: 0.5rem 0.95rem;
+      color: var(--color-primario);
+      background: var(--blanco);
+      border: 1px solid rgba(20, 134, 204, 0.32);
+      text-decoration: none;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      transition: transform 0.28s ease, background 0.28s ease, color 0.28s ease;
+    }
+
+    .back-button:hover {
+      color: var(--blanco);
+      background: var(--color-secundario);
+      transform: translateY(-2px);
+    }
+
+    .back-button svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      width: 100%;
+      max-width: var(--ancho-maximo);
+      margin: 0 auto;
+      padding: clamp(3rem, 7vw, 5rem) 1.4rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.88fr);
+      align-items: center;
+      gap: clamp(2rem, 5vw, 4rem);
+    }
+
+    .hero-copy {
+      max-width: 680px;
+    }
+
+    .eyebrow {
+      color: var(--color-secundario);
+      font-size: 0.84rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+    }
+
+    h1 {
+      color: var(--color-primario);
+      font-size: clamp(2.2rem, 5vw, 4.3rem);
+      line-height: 1.03;
+      text-wrap: balance;
+    }
+
+    .hero-copy p:not(.eyebrow) {
+      max-width: 620px;
+      margin-top: 1.1rem;
+      color: var(--color-texto-suave);
+      font-size: 1.08rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .tag {
+      min-height: 34px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      color: var(--color-primario);
+      background: var(--blanco);
+      border: 1px solid rgba(20, 134, 204, 0.18);
+      font-size: 0.82rem;
+      font-weight: 800;
+      box-shadow: 0 10px 26px rgba(13, 60, 97, 0.08);
+    }
+
+    .profile-card {
+      border-radius: 18px;
+      padding: 1.2rem;
+      background: var(--blanco);
+      box-shadow: var(--sombra-fuerte);
+    }
+
+    .profile-inner {
+      min-height: 360px;
+      border-radius: 14px;
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background:
+        radial-gradient(circle at 72% 18%, rgba(26, 188, 156, 0.22), transparent 34%),
+        linear-gradient(135deg, var(--color-claro), var(--blanco));
+    }
+
+    .avatar {
+      width: 74px;
+      height: 74px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--blanco);
+      background: linear-gradient(135deg, var(--color-secundario), var(--color-primario));
+      font-size: 1.65rem;
+      font-weight: 900;
+      box-shadow: 0 16px 32px rgba(20, 134, 204, 0.24);
+      margin-bottom: 1rem;
+    }
+
+    .profile-inner h2 {
+      color: var(--color-primario);
+      font-size: 1.45rem;
+      line-height: 1.15;
+    }
+
+    .profile-inner p {
+      margin-top: 0.45rem;
+      color: var(--color-texto-suave);
+    }
+
+    .content-grid {
+      margin-top: clamp(3rem, 7vw, 5rem);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+      gap: clamp(1.4rem, 4vw, 2.4rem);
+      align-items: start;
+    }
+
+    .panel,
+    .contact-card {
+      background: var(--blanco);
+      border: 1px solid rgba(13, 60, 97, 0.09);
+      border-radius: var(--radio);
+      box-shadow: 0 14px 34px rgba(13, 60, 97, 0.08);
+      padding: clamp(1.35rem, 3vw, 1.8rem);
+    }
+
+    .panel h2,
+    .contact-card h2 {
+      color: var(--color-primario);
+      font-size: clamp(1.45rem, 2.8vw, 2.05rem);
+      line-height: 1.12;
+      text-wrap: balance;
+      margin-bottom: 0.8rem;
+    }
+
+    .panel p,
+    .contact-helper {
+      color: var(--color-texto-suave);
+    }
+
+    .panel p + p {
+      margin-top: 0.75rem;
+    }
+
+    .skills-grid {
+      margin-top: 1.25rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+    }
+
+    .skill-pill {
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      border-radius: var(--radio);
+      padding: 0.7rem;
+      color: var(--color-primario);
+      background: var(--color-claro);
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .skill-dot {
+      width: 9px;
+      height: 9px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--color-acento);
+      box-shadow: 0 0 0 5px rgba(26, 188, 156, 0.13);
+    }
+
+    .panel-footer {
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(13, 60, 97, 0.1);
+      color: var(--color-texto-suave);
+      font-size: 0.9rem;
+    }
+
+    .contact-card {
+      position: sticky;
+      top: 104px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .contact-item {
+      display: grid;
+      grid-template-columns: 46px minmax(0, 1fr);
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.9rem;
+      border-radius: var(--radio);
+      background: var(--color-claro);
+      text-decoration: none;
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+    }
+
+    .contact-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 34px rgba(13, 60, 97, 0.13);
+    }
+
+    .icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radio);
+      color: var(--blanco);
+      background: linear-gradient(135deg, var(--color-secundario), var(--color-acento));
+    }
+
+    .icon svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    .contact-text span {
+      display: block;
+      color: var(--color-texto-suave);
+      font-size: 0.74rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .contact-text strong {
+      display: block;
+      color: var(--color-primario);
+      font-size: 0.98rem;
+      word-break: break-word;
+      margin-top: 0.08rem;
+    }
+
+    .contact-helper {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: var(--radio);
+      background:
+        radial-gradient(circle at 16% 20%, rgba(26, 188, 156, 0.14), transparent 34%),
+        linear-gradient(135deg, var(--blanco), var(--color-claro));
+      font-size: 0.9rem;
+    }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 1.6rem 1rem;
+      color: var(--blanco);
+      background: var(--color-primario);
+      font-size: 0.86rem;
+    }
+
+    footer span {
+      font-weight: 900;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      filter: blur(8px);
+      animation: reveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .delay-one {
+      animation-delay: 0.12s;
+    }
+
+    .delay-two {
+      animation-delay: 0.22s;
+    }
+
+    @keyframes reveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+    }
+
+    @keyframes waveMove {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(140px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+        filter: none;
+      }
+    }
+
+    @media (max-width: 960px) {
+      .hero,
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        text-align: center;
+        margin: 0 auto;
+      }
+
+      .hero-copy p:not(.eyebrow) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .tags {
+        justify-content: center;
+      }
+
+      .profile-card {
+        max-width: 620px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .contact-card {
+        position: static;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .topbar-inner {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .header-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      main {
+        padding: 2.2rem 1rem 3rem;
+      }
+
+      .profile-inner {
+        min-height: 280px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .hero-copy p:not(.eyebrow) {
+        font-size: 0.98rem;
+      }
+
+      .contact-item {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span>Contacto del desarrollador</span>
+      <span class="topbar-contact"><span class="dot"></span> Proyectos web, soporte y mantenimiento</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <strong>Alejo Espinosa</strong>
+        <small>Desarrollo web</small>
+      </div>
+
+      <a href="index.html" class="back-button" title="Volver a inicio">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/>
+        </svg>
+        Inicio
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Contacto profesional</p>
+        <h1>Desarrollo y mejora de sitios web claros, modernos y funcionales</h1>
+        <p>
+          Creación, mantenimiento y actualización de páginas para instituciones, emprendimientos y proyectos educativos, con foco en diseño adaptable y navegación simple.
+        </p>
+
+        <div class="tags">
+          <span class="tag">HTML • CSS • JavaScript</span>
+          <span class="tag">PHP • Formularios</span>
+          <span class="tag">Diseño responsive</span>
+        </div>
+      </div>
+
+      <aside class="profile-card reveal delay-one">
+        <div class="profile-inner">
+          <div class="avatar">AE</div>
+          <h2>AlejoESP_25</h2>
+          <p>Soluciones web a medida, mejoras visuales y soporte para sitios existentes.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="content-grid">
+      <div class="panel reveal">
+        <p class="eyebrow">Sobre el desarrollador</p>
+        <h2>Diseño y soporte web con enfoque práctico</h2>
+        <p>
+          Trabajo con estructura limpia, buena organización del contenido y experiencia de usuario sencilla, para que cualquier persona pueda navegar la página sin complicaciones desde computadora o celular.
+        </p>
+        <p>
+          Puedo ayudarte con la creación, mejora o mantenimiento de tu sitio web, actualización de información, optimización visual y adaptación de páginas existentes a un diseño más moderno.
+        </p>
+
+        <div class="skills-grid">
+          <div class="skill-pill"><span class="skill-dot"></span><span>Maquetado HTML / CSS</span></div>
+          <div class="skill-pill"><span class="skill-dot"></span><span>Sitios institucionales</span></div>
+          <div class="skill-pill"><span class="skill-dot"></span><span>PHP básico y formularios</span></div>
+          <div class="skill-pill"><span class="skill-dot"></span><span>Diseño adaptable</span></div>
+        </div>
+
+        <div class="panel-footer">
+          Para consultas, presupuestos o colaboraciones, podés escribirme por cualquiera de los medios de contacto. Respondo principalmente por <strong>WhatsApp</strong> y <strong>correo electrónico</strong>.
+        </div>
+      </div>
+
+      <aside class="contact-card reveal delay-two">
+        <p class="eyebrow">Datos de contacto</p>
+        <h2>Hablemos de tu proyecto</h2>
+
+        <div class="contact-list">
+          <a class="contact-item" href="mailto:alejogaespinosa@gmail.com">
+            <span class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </span>
+            <span class="contact-text">
+              <span>Correo electrónico</span>
+              <strong>alejogaespinosa@gmail.com</strong>
+            </span>
+          </a>
+
+          <a class="contact-item" href="https://wa.me/qr/MO4MJIZHHJVIK1" target="_blank" rel="noopener noreferrer">
+            <span class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M16.027 3C9.383 3 4 8.383 4 15.027c0 2.684.76 5.273 2.184 7.518L4 29l6.66-2.141c2.195 1.203 4.668 1.84 7.367 1.84 6.645 0 12.027-5.383 12.027-12.027S22.672 3 16.027 3zm0 21.68c-2.305 0-4.516-.676-6.426-1.953l-.457-.297-3.953 1.273 1.285-3.84-.293-.477c-1.188-1.918-1.82-4.125-1.82-6.386 0-6.27 5.094-11.363 11.363-11.363s11.363 5.094 11.363 11.363-5.094 11.363-11.363 11.363z"/>
+                <path d="M21.547 18.711c-.352-.176-2.086-1.027-2.41-1.145-.324-.121-.559-.176-.793.176s-.91 1.145-1.117 1.387c-.207.242-.41.27-.762.094-.352-.176-1.484-.547-2.828-1.742-1.043-.93-1.742-2.082-1.949-2.434-.207-.352-.023-.543.152-.719.156-.156.352-.41.527-.613.176-.207.234-.352.352-.59.117-.234.059-.441-.029-.617-.09-.176-.793-1.91-1.086-2.617-.285-.684-.574-.59-.793-.598l-.676-.012c-.234 0-.617.09-.941.441s-1.23 1.203-1.23 2.93 1.258 3.398 1.434 3.633c.176.234 2.484 3.789 6.016 5.309.84.363 1.496.578 2.008.742.844.27 1.613.23 2.219.141.676-.098 2.086-.855 2.379-1.68.293-.82.293-1.52.203-1.68-.09-.156-.324-.254-.676-.43z"/>
+              </svg>
+            </span>
+            <span class="contact-text">
+              <span>WhatsApp</span>
+              <strong>3794-621021</strong>
+            </span>
+          </a>
+
+          <a class="contact-item" href="https://www.instagram.com/alejo_espinosa20/?igsh=MThvMGhiOXY5bDFnMg%3D%3D#" target="_blank" rel="noopener noreferrer">
+            <span class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zm-5 3.5c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5S14.48 7.5 12 7.5zm0 2c1.38 0 2.5 1.12 2.5 2.5S13.38 14.5 12 14.5 9.5 13.38 9.5 12 10.62 9.5 12 9.5zm4.75-3a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z"/>
+              </svg>
+            </span>
+            <span class="contact-text">
+              <span>Instagram</span>
+              <strong>alejo_espinosa20</strong>
+            </span>
+          </a>
+        </div>
+
+        <p class="contact-helper">
+          Si escribís por correo, contame brevemente el tipo de proyecto y el tiempo estimado en el que lo necesitás.
+        </p>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 - Página desarrollada por <span>AlejoESP_25</span>. Todos los derechos reservados.
+  </footer>
+</body>
+</html>

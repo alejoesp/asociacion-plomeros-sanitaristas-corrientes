@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - Asociación Civil de Plomeros y Sanitaristas de Corrientes</title>
+
+    <meta name="description" content="Formulario de contacto de la Asociación Civil de Plomeros y Sanitaristas de Corrientes. Escribinos para consultas, propuestas o información institucional.">
+
+    <link rel="icon" type="image/png" href="imagen/logo3.jpg" />
+    <link rel="stylesheet" href="css/styles-contacto.css?v=3.0" />
+</head>
+<body>
+    <div class="topbar">
+        <div class="topbar-container">
+            <span>Asociación Civil de Plomeros y Sanitaristas de Corrientes</span>
+            <span class="topbar-contact"><span class="dot"></span> Consultas, propuestas y contacto institucional</span>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="brand" aria-label="Ir al inicio">
+                <img src="imagen/logo3.jpg" alt="Logo de la Asociación Civil de Plomeros y Sanitaristas de Corrientes">
+                <span>
+                    <strong>Asociación Civil de Plomeros y Sanitaristas</strong>
+                    <small>Corrientes</small>
+                </span>
+            </a>
+
+            <nav class="nav" aria-label="Navegación principal">
+                <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="quienes.html" class="nav-link">Quiénes Somos</a></li>
+                    <li><a href="eventos.html" class="nav-link">Eventos</a></li>
+                    <li><a href="contacto.html" class="nav-link active">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-contacto">
+            <div class="hero-inner">
+                <div class="hero-copy reveal">
+                    <p class="eyebrow">Contacto institucional</p>
+                    <h1>Estamos para escuchar tu consulta o propuesta</h1>
+                    <p>
+                        Escribinos para recibir información sobre la Asociación, capacitaciones, actividades, propuestas institucionales o inquietudes vinculadas al rubro sanitario.
+                    </p>
+                </div>
+
+                <div class="hero-panel reveal delay-one">
+                    <div>
+                        <span class="panel-icon"></span>
+                        <strong>Canal oficial</strong>
+                        <p>Respondemos a la brevedad al correo que informes en el formulario.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacto-section">
+            <div class="contacto-layout">
+                <div class="contacto-card reveal">
+                    <div class="form-heading">
+                        <p class="eyebrow">Formulario</p>
+                        <h2>Enviar mensaje</h2>
+                    </div>
+<form name="contacto" method="post" action="https://formsubmit.co/aso.civ.deplo.ysani.ctes@gmail.com" novalidate>
+                        <input type="hidden" name="_subject" value="Nueva consulta desde el sitio web de la Asociación">
+                        <input type="hidden" name="_next" value="https://asociaciondeplomerosysanitaristas-corrientes.site/gracias.html">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                        <p class="campo-oculto" hidden>
+                            <label>No completar: <input name="bot-field"></label>
+                        </p>
+                        <div class="campo-form">
+                            <label for="nombre">Nombre completo <span class="requerido">*</span></label>
+                            <input
+                                type="text"
+                                id="nombre"
+                                name="nombre"
+                                required
+                                placeholder="Por ejemplo: Juan Pérez"
+                            >
+                        </div>
+
+                        <div class="campo-form">
+                            <label for="email">Correo electrónico <span class="requerido">*</span></label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                placeholder="ejemplo@correo.com"
+                            >
+                            <small class="ayuda-campo">Usaremos este correo para responderte.</small>
+                        </div>
+
+                        <div class="campo-form">
+                            <label for="mensaje">Mensaje <span class="requerido">*</span></label>
+                            <textarea
+                                id="mensaje"
+                                name="mensaje"
+                                rows="6"
+                                required
+                                placeholder="Escribe tu consulta, propuesta o comentario..."
+                            ></textarea>
+                        </div>
+
+                        <p class="nota-requeridos">
+                            Los campos marcados con <span class="requerido">*</span> son obligatorios.
+                        </p>
+
+                        <button type="submit" class="btn-enviar">Enviar mensaje</button>
+                    </form>
+                </div>
+
+                <aside class="info-card reveal delay-one">
+                    <p class="eyebrow">Datos de contacto</p>
+                    <h2>También podés comunicarte por estos medios</h2>
+
+                    <div class="info-datos">
+                        <div>
+                            <span class="info-icon ubicacion"></span>
+                            <p><strong>Dirección</strong>Corrientes Capital, Argentina</p>
+                        </div>
+                        <div>
+                            <span class="info-icon telefono"></span>
+                            <p><strong>Teléfono</strong>+54 9 3795 06-1298</p>
+                        </div>
+                        <div>
+                            <span class="info-icon email"></span>
+                            <p><strong>Email</strong>aso.civ.deplo.ysani.ctes@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-extra">
+                        <h3>Para responderte mejor</h3>
+                        <p>
+                            Incluí tus datos de contacto y el motivo de la consulta: capacitación, asociación, propuesta institucional o actividad comunitaria.
+                        </p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-titulo">Síguenos en nuestras redes sociales:</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/1FHsdmBweM/" target="_blank" rel="noopener noreferrer">
+                    <img src="imagen/facebook.png" alt="Facebook" class="icon">
+                </a>
+                <a href="https://www.instagram.com/plomeros_y_sanitaristas_ctes?igsh=b3V4Z2pvZWdleGl6" target="_blank" rel="noopener noreferrer">
+                    <img src="imagen/instagram.png" alt="Instagram" class="icon">
+                </a>
+            </div>
+            <p>&copy; 2026 Asociación Civil de Plomeros y Sanitaristas de Corrientes - Todos los derechos reservados</p>
+            <p class="credit">
+                Página web realizada por:
+                <a href="contacto_desarrollador.html" target="_blank" rel="noopener noreferrer">
+                    <img src="imagen/sitio-web.png" alt="Crédito del desarrollador del sitio">
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const navToggle = document.querySelector(".nav-toggle");
+            const navList = document.querySelector(".nav-list");
+
+            if (navToggle && navList) {
+                navToggle.addEventListener("click", () => {
+                    const isOpen = navList.classList.toggle("open");
+                    navToggle.classList.toggle("open", isOpen);
+                    navToggle.setAttribute("aria-expanded", String(isOpen));
+                });
+            }
+
+            const revealItems = document.querySelectorAll(".reveal");
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            revealItems.forEach(item => revealObserver.observe(item));
+        });
+    </script>
+</body>
+</html>
